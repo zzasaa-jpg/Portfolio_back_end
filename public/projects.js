@@ -354,7 +354,7 @@ function notification(message) {
     notification.style.left = "10px";
     notification_info.innerText = message;
     setTimeout(() => {
-        notification.style.transform = "translateX(-450px)";
+        notification.style.transform = "translateX(-950px)";
     }, 2000)
 }
 
