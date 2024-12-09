@@ -1,6 +1,6 @@
 async function a() {
     loader9(true)
-    const response = await fetch("http://localhost:9090/projects");
+    const response = await fetch("https://portfolio-back-end-q8gv.onrender.com/projects");
     let project_id = document.getElementById("project-id");
     let change_element = document.getElementById("change_element");
     change_element.disabled = true;
@@ -22,7 +22,7 @@ function projects_id() {
     let project_id = document.getElementById("project-id");
     project_id.addEventListener("change", async function () {
         // console.log(project_id.value);
-        const response = await fetch(`http://localhost:9090/projects/${project_id.value}`);
+        const response = await fetch(`https://portfolio-back-end-q8gv.onrender.com/projects/${project_id.value}`);
         console.log(response.status);
         if (response.ok) {
             const results = await response.json();
@@ -45,7 +45,7 @@ function projects_id() {
                             E.preventDefault();
                             loader(true);
                             let updateTitle = title.value;
-                            const response = await fetch(`http://localhost:9090/editProjects/${project_id.value}`, {
+                            const response = await fetch(`https://portfolio-back-end-q8gv.onrender.com/editProjects/${project_id.value}`, {
                                 method: "POST",
                                 headers: {
                                     "Content-Type": "application/json" // Sending data as JSON
@@ -76,7 +76,7 @@ function projects_id() {
                             E.preventDefault();
                             loader1(true);
                             let updateGithublink = githublink.value;
-                            const response = await fetch(`http://localhost:9090/editProjects/${project_id.value}`, {
+                            const response = await fetch(`https://portfolio-back-end-q8gv.onrender.com/editProjects/${project_id.value}`, {
                                 method: "POST",
                                 headers: {
                                     "Content-Type": "application/json"
@@ -106,7 +106,7 @@ function projects_id() {
                             E.preventDefault();
                             loader2(true);
                             let updateWeblink = weblink.value;
-                            const response = await fetch(`http://localhost:9090/editProjects/${project_id.value}`, {
+                            const response = await fetch(`https://portfolio-back-end-q8gv.onrender.com/editProjects/${project_id.value}`, {
                                 method: "POST",
                                 headers: { "Content-Type": "application/json" },
                                 body: JSON.stringify({ weblink: updateWeblink })
@@ -134,7 +134,7 @@ function projects_id() {
                             E.preventDefault();
                             loader3(true);
                             let updateTech = tech.value;
-                            const response = await fetch(`http://localhost:9090/editProjects/${project_id.value}`, {
+                            const response = await fetch(`https://portfolio-back-end-q8gv.onrender.com/editProjects/${project_id.value}`, {
                                 method: "POST",
                                 headers: { "Content-Type": "application/json" },
                                 body: JSON.stringify({ technologies: updateTech })
@@ -162,7 +162,7 @@ function projects_id() {
                             E.preventDefault();
                             loader4(true);
                             let updateLastUpdate = lastupdate.value;
-                            const response = await fetch(`http://localhost:9090/editProjects/${project_id.value}`, {
+                            const response = await fetch(`https://portfolio-back-end-q8gv.onrender.com/editProjects/${project_id.value}`, {
                                 method: "POST",
                                 headers: { "Content-Type": "application/json" },
                                 body: JSON.stringify({ lastupdate: updateLastUpdate })
@@ -190,7 +190,7 @@ function projects_id() {
                             E.preventDefault();
                             loader5(true);
                             let updateProjectDescription = projectdescription.value;
-                            const response = await fetch(`http://localhost:9090/editProjects/${project_id.value}`, {
+                            const response = await fetch(`https://portfolio-back-end-q8gv.onrender.com/editProjects/${project_id.value}`, {
                                 method: "POST",
                                 headers: { "Content-Type": "application/json" },
                                 body: JSON.stringify({ description: updateProjectDescription })
@@ -235,7 +235,7 @@ function projects_id() {
                                     appendFiles("videos-loptop");
                                     appendFiles("images-tab");
 
-                                    const response = await fetch(`http://localhost:9090/insertIMG/${id}`, {
+                                    const response = await fetch(`https://portfolio-back-end-q8gv.onrender.com/insertIMG/${id}`, {
                                         method: "POST",
                                         body: formData,
                                     })
@@ -281,7 +281,7 @@ function projects_id() {
                                         let id = results.data._id;
                                         loader7(true);
                                         console.log(el.fieldname, el.originalname, results.data._id);
-                                        const response = await fetch(`http://localhost:9090/deleteIMG/${id}`, {
+                                        const response = await fetch(`https://portfolio-back-end-q8gv.onrender.com/deleteIMG/${id}`, {
                                             method: "DELETE",
                                             headers: { "Content-Type": "application/json" },
                                             body: JSON.stringify({ fieldname: el.fieldname, originalname: el.originalname })
@@ -314,7 +314,7 @@ function projects_id() {
                         loader8(true);
                         console.log(id)
                         try {
-                            const response = await fetch(`http://localhost:9090/delProject/${id}`, {
+                            const response = await fetch(`https://portfolio-back-end-q8gv.onrender.com/delProject/${id}`, {
                                 method: "DELETE",
                                 headers: { "Content-Type": "application/json" },
                             });
@@ -354,7 +354,7 @@ function notification(message) {
     notification.style.left = "10px";
     notification_info.innerText = message;
     setTimeout(() => {
-        notification.style.transform = "translateX(-250px)";
+        notification.style.transform = "translateX(-450px)";
     }, 2000)
 }
 
