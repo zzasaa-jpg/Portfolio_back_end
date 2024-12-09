@@ -46,6 +46,7 @@ function notification(message) {
     notification.style.top = "15px";
     notification.style.left = "10px";
     notification_info.innerText = message;
+    notification.style.zIndex = "4";
     setTimeout(() => {
         notification.style.transform = "translateX(-250px)";
     }, 2000)
@@ -54,17 +55,18 @@ function notification(message) {
 function loader(value) {
     let form = document.getElementById("form");
     let loader_wrapper = document.getElementById("loader_wrapper");
+    let submit = document.getElementById("submit");
     if (value) {
         loader_wrapper.style.display = "flex";
-        form.style.display = "none";
-        form.appendChild(loader_wrapper);
+        submit.innerText ='';
+        submit.style.padding= "8px";
+        submit.appendChild(loader_wrapper);
     } else {
         loader_wrapper.style.display = "none";
-        form.style.display = "flex";
-        // form.removeChild(loader_wrapper);
+        submit.innerText = "Submit";
+        submit.style.padding= "5px";
         setTimeout(() => {
             location.reload();
         }, 2100);
-
     }
 }
