@@ -14,7 +14,7 @@ async function sendData(E) {
     appendFiles("videos-loptop");
     appendFiles("images-tab");
 
-    const response = await fetch("http://localhost:9090/storedata", {
+    const response = await fetch("https://portfolio-back-end-q8gv.onrender.com/storedata", {
         method: "POST",
         body: formDta,
     });
@@ -48,7 +48,7 @@ function notification(message) {
     notification_info.innerText = message;
     notification.style.zIndex = "4";
     setTimeout(() => {
-        notification.style.transform = "translateX(-250px)";
+        notification.style.transform = "translateX(-450px)";
     }, 2000)
 }
 
